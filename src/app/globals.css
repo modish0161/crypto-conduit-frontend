@@ -2,32 +2,66 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+/* Import your custom font */
+@font-face {
+  font-family: 'CryptoFunky';
+  src: url('/fonts/CryptoFunky.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
+/* Apply global styles including the color scheme from the logo */
+html,
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: 'CryptoFunky', sans-serif;
+  color: #ffffff;
+  /* Assuming the primary text color in the logo is white */
+  background-color: #0A192F;
+  /* Assuming the background color of the logo is a deep navy */
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+/* Styles for the header component */
+header {
+  background-color: #0A192F;
+  /* Header background color */
+  border-bottom: 2px solid #64FFDA;
+  /* Accent border color from the logo */
 }
+
+/* Navbar and links styling */
+nav {
+  color: #64FFDA;
+  /* Navbar links color */
+}
+
+nav a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #8892B0;
+  /* Lighter shade for hover state */
+}
+
+/* Apply a global button style as an example */
+button {
+  background-color: #64FFDA;
+  /* Button background color from the logo */
+  color: #0A192F;
+  /* Text color for buttons */
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #7F8C8D;
+  /* Darker shade for hover state */
+}
+
+/* You may need to adjust the colors based on the actual logo palette. */
