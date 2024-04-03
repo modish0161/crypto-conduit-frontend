@@ -12,7 +12,7 @@ const Header = () => {
             <nav className={styles.nav}>
                 <Link href="/" passHref className={styles.logo}>
 
-                    <Image src="/Logo.webp" alt="Crypto Conduit Logo" width={100} height={100} priority />
+                    <Image src="/Logo.webp" alt="Crypto Conduit Logo" width={50} height={50} priority />
 
                 </Link>
                 <ul className={styles.menu}>

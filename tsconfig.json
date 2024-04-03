@@ -11,15 +11,16 @@
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "node", // Correct value for moduleResolution
+    "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "baseUrl": ".", // Ensure the base URL is set for path resolution
     "paths": {
       "@/*": [
-        "./src/*"
-      ]
+        "./*"
+      ] // Match directories under src for the "@" alias
     },
     "plugins": [
       {
@@ -30,9 +31,7 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
-    // Removed ".next/types/**/*.ts"
-    ,
+    "**/*.tsx",
     ".next/types/**/*.ts"
   ],
   "exclude": [
