@@ -65,4 +65,42 @@
   button:hover {
     background-color: var(--button-hover-color);
   }
+
+  .navbar {
+    background-color: var(--primary-color);
+    /* Adjust this variable as needed or replace it with a specific color */
+    padding: 1rem;
+  }
+
+  .navList {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+  }
+
+  .navLink {
+    text-decoration: none;
+    color: #ffffff;
+    /* Or use a CSS variable like var(--text-color) */
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+
+  .navLink:hover,
+  .navLink:focus {
+    background-color: var(--accent-color);
+    /* Adjust or replace with specific color */
+  }
+
+  .active {
+    background-color: var(--accent-color);
+    /* For active link, adjust or replace with specific color */
+  }
+
+  .navLink.active {
+    background-color: #666;
+    /* Adjust for active state as needed */
+  }
 }

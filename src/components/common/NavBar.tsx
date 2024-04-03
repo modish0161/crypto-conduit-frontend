@@ -1,43 +1,22 @@
+// components/common/NavBar.tsx
 import React from 'react';
-import { NavLink, NavLinkProps } from 'react-router-dom';
-import styles from './NavBar.module.css';
-
-interface CustomNavLinkProps extends Omit<NavLinkProps, 'children'> {
-    children: React.ReactNode;
-    activeClassName?: string;
-}
-
-const CustomNavLink: React.FC<CustomNavLinkProps> = ({ to, className, activeClassName, children }) => (
-    <NavLink to={to} className={className} activeClassName={activeClassName}>
-        {children}
-    </NavLink>
-);
+import Link from 'next/link';
 
 const NavBar = () => (
-    <nav className={styles.navbar}>
-        <ul className={styles.navList}>
-            <li className={styles.navItem}>
-                <CustomNavLink to="/" className={styles.navLink} activeClassName={styles.active}>
-                    Home
-                </CustomNavLink>
+    <nav className="navbar">
+        <ul className="navList">
+            <li>
+                <Link href="/">
+                    <a className="navLink">Home</a>
+                </Link>
             </li>
-            <li className={styles.navItem}>
-                <CustomNavLink to="/dashboard" className={styles.navLink} activeClassName={styles.active}>
-                    Dashboard
-                </CustomNavLink>
+            <li>
+                <Link href="/dashboard">
+                    <a className="navLink">Dashboard</a>
+                </Link>
             </li>
-            <li className={styles.navItem}>
-                <CustomNavLink to="/swap" className={styles.navLink} activeClassName={styles.active}>
-                    Swap
-                </CustomNavLink>
-            </li>
-            <li className={styles.navItem}>
-                <CustomNavLink to="/account" className={styles.navLink} activeClassName={styles.active}>
-                    Account
-                </CustomNavLink>
-            </li>
+            {/* Additional links */}
         </ul>
-        {/* Mobile Menu Toggle Button */}
     </nav>
 );
 
