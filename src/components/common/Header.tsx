@@ -11,7 +11,7 @@ const Header = () => {
     return (
         <header style={{ backgroundColor: '#333', color: '#fff', padding: '1rem' }}>
             <nav>
-                <Link href="/" passHref>
+                <Link href="/" passHref legacyBehavior>
                     <Image src="/Logo.webp" alt="Crypto Conduit Logo" width={100} height={100} priority />
                 </Link>
                 <ul>
