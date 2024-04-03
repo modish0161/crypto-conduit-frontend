@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 /* Import your custom font */
 @font-face {
   font-family: 'CryptoFunky';
@@ -10,58 +6,63 @@
   font-style: normal;
 }
 
-/* Apply global styles including the color scheme from the logo */
-html,
-body {
-  font-family: 'CryptoFunky', sans-serif;
-  color: #ffffff;
-  /* Assuming the primary text color in the logo is white */
-  background-color: #0A192F;
-  /* Assuming the background color of the logo is a deep navy */
-}
+/* Extend Tailwind with custom colors based on your logo */
+@layer base {
+  :root {
+    --primary-color: #0D47A1;
+    /* Main color from the logo */
+    --accent-color: #64FFDA;
+    /* Accent color from the logo */
+    --background-color: #0A192F;
+    /* Dark background color */
+    --hover-color: #8892B0;
+    /* Lighter shade for hover state */
+    --button-hover-color: #7F8C8D;
+    /* Darker shade for button hover */
+    /* Adjust the color variables based on the actual logo colors */
+  }
 
-/* Styles for the header component */
-header {
-  background-color: #0A192F;
-  /* Header background color */
-  border-bottom: 2px solid #64FFDA;
-  /* Accent border color from the logo */
-}
+  html,
+  body {
+    color: #fff;
+    background-color: var(--background-color);
+    font-family: 'CryptoFunky', sans-serif;
+  }
 
-/* Navbar and links styling */
-nav {
-  color: #64FFDA;
-  /* Navbar links color */
-}
+  /* Styles for the header component */
+  header {
+    background-color: var(--background-color);
+    border-bottom: 2px solid var(--accent-color);
+  }
 
-nav a {
-  text-decoration: none;
-  color: inherit;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
+  /* Navbar and links styling */
+  nav {
+    color: var(--accent-color);
+  }
 
-nav a:hover {
-  color: #8892B0;
-  /* Lighter shade for hover state */
-}
+  nav a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
 
-/* Apply a global button style as an example */
-button {
-  background-color: #64FFDA;
-  /* Button background color from the logo */
-  color: #0A192F;
-  /* Text color for buttons */
-  padding: 8px 16px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
+  nav a:hover {
+    color: var(--hover-color);
+  }
 
-button:hover {
-  background-color: #7F8C8D;
-  /* Darker shade for hover state */
-}
+  /* Apply a global button style as an example */
+  button {
+    background-color: var(--accent-color);
+    color: var(--background-color);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
 
-/* You may need to adjust the colors based on the actual logo palette. */
+  button:hover {
+    background-color: var(--button-hover-color);
+  }
+}

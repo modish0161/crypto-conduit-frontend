@@ -1,0 +1,31 @@
+.navbar {
+    background-color: var(--primary-color);
+    /* From theme.ts */
+    padding: 1rem;
+}
+
+.navList {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+}
+
+.navLink {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.navLink:hover,
+.navLink:focus {
+    background-color: var(--accent-color);
+    /* Lighter or contrast color for hover state */
+}
+
+.active {
+    background-color: var(--accent-color);
+    /* For the active page link */
+}
